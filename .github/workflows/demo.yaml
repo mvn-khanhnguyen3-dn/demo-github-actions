@@ -1,0 +1,21 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  steps:
+    - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.13.x
+          cache: npm
+    - name: Install
+        run: npm ci
+    - name: hello workflow_dispatch
+      run: echo hello

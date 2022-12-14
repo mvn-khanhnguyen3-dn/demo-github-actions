@@ -1,0 +1,61 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+ul li{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-input,.btn{
+  border: none;
+  outline: none;
+  padding: .6rem 1.2rem;
+}
+
+.btn{
+  width: 5rem;
+}
+
+[v-cloak]{
+  display: none;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body,#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+}
