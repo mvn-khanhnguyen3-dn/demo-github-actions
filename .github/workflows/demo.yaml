@@ -1,11 +1,8 @@
-name: Github actions
-on:
-  push:
-    branches:
-      - master
-permissions:
-  contents: read
+name: hello-world
+on: push
 jobs:
-  steps:
-    - name: hello workflow_dispatch
-      run: echo hello
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Hello World!"
