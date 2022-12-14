@@ -1,13 +1,10 @@
+name: Github actions
 on:
-  workflow_dispatch:
   push:
     branches:
-      - main
-  pull_request:
-
+      - master
 permissions:
   contents: read
-  pull-requests: read
 jobs:
   steps:
     - name: hello workflow_dispatch
