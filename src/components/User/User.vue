@@ -10,6 +10,8 @@ export default {
 
 }
 console.log("asdasda");
+console.log("123123");
+console.log("45345345");
 </script>
 <style scoped>
 
