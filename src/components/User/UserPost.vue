@@ -3,10 +3,8 @@
         User Post
     </div>
 </template>
-<script>
-export default {
-
-}
+<script setup>
+    console.log("Khnahs");
 </script>
 <style lang="">
 

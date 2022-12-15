@@ -1,21 +1,25 @@
-name: CI
-on: [push,pull_request]
+name: reviewdog
+on:
+  push:
+  pull_request:
+    branches: 
+      - develop2
 jobs:
   eslint:
-    name: runner / eclint
+    name: runner / eslint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 14
-    - run: npm ci
-    - run: npm install
-    - uses: reviewdog/action-eslint@v1
-      with:
-        github_token: ${{ secrets.GITHUBTOKEN }}
-        reporter: github-pr-review # Change reporter.
-        eslint_flags: 'src/'
-    - name: Run ESLint
-      run: npm run lint
-
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - run: yarn install
+      - name: setup review cho
+        uses: reviewdog/action-setup@v1
+      - run: reviewdog -version
+      - name: check lint
+      - uses: reviewdog/action-eslint@v1
+        with:
+          # github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review # Change reporter.
+      - run: yarn lint
