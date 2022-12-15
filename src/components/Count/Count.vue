@@ -1,23 +1,11 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template lang="">
-    <div>
-        <h3>Count</h3>
-        {{$store.state.count}}
-        <button @click="$store.dispatch('increment')">click</button>
-        <button @click="$store.dispatch('doubleCount')">click2</button>
-        <button @click="increment">click</button>
-    </div>
+  <h3>Count</h3>
+  {{ $store.state.count }}
+  <button @click="$store.dispatch('increment')">click</button>
+  <button @click="$store.dispatch('doubleCount')">click2</button>
+  <button @click="increment">click</button>
 </template>
 
-<script>
-import { mapActions } from 'vuex'
-export default {
-  computed: {
-    ...mapActions([
-      'increment',
-      'doubleCount'
-    ])
-  }
-}
-</script>
-<style lang="">
-</style>
+<script></script>
+<style lang=""></style>

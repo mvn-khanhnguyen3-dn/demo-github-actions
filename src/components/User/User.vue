@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template lang="">
     <div class="user">
         <h1>Hi</h1>
@@ -8,6 +9,7 @@
 export default {
 
 }
+console.log("asdasda");
 </script>
 <style scoped>
 

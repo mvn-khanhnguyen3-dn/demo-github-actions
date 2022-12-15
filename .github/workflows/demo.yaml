@@ -1,15 +1,11 @@
-name: hello-world
+name: CI
 on: push
- branches:
-      - master
-permissions:
-  contents: read
 jobs:
-  my-job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install modules
-        run: npm
-      - name: Run ESLint
-        run: eslint . --ext .js,.jsx,.ts,.tsx,.vue
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run ESLint
+      run: eslint . --ext .js,.jsx,.ts,.tsx,.vue

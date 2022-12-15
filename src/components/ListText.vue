@@ -1,6 +1,6 @@
 <script setup>
 import DeleteText from "./DeleteText.vue";
-import UpdateText from "./UpdateText.vue";
+import UpdateText from './UpdateText.vue';
 import { store } from "../store.js";
 </script>
 <template v-cloak>
