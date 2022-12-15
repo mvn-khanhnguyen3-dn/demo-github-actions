@@ -4,20 +4,7 @@ jobs:
   eclint:
     name: runner / eclint
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
-    - name: Create issue using REST API
-        run: |
-          curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/issues \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "title": "Automated issue for commit: ${{ github.sha }}",
-            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
-            }' \
-          --fail
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
@@ -25,9 +12,10 @@ jobs:
     - run: npm ci
     - run: npm install
     - uses: reviewdog/action-eslint@v1
-      with:
-        reporter: github-check
-        eslint_flags: 'src/'
+        with:
+          github_token: ${{ secrets.GITHUBTOKEN }}
+          reporter: github-pr-review # Change reporter.
+          eslint_flags: 'src/'
     - name: Run ESLint
       run: npm run lint
 
