@@ -1,7 +1,7 @@
 name: CI
 on: [push,pull_request]
 jobs:
-  eclint:
+  eslint:
     name: runner / eclint
     runs-on: ubuntu-latest
     steps:
@@ -18,5 +18,4 @@ jobs:
         eslint_flags: 'src/'
     - name: Run ESLint
       run: npm run lint
-
 
