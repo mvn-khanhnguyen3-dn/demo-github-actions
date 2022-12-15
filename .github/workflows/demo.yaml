@@ -13,9 +13,8 @@ jobs:
     - run: npm install
     - name: Run ESLint
       run: npm run lint
-    - name: eclint
-      uses: reviewdog/action-eclint@v1
-      with:
-        github_token: ${{ secrets.github_token }}
-        reporter: github-pr-review # Change reporter.
-        eclint_flags: 'src/'
+    - uses: reviewdog/action-eslint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          eslint_flags: 'src/'
