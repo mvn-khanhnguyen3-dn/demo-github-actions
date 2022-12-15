@@ -12,10 +12,10 @@ jobs:
     - run: npm ci
     - run: npm install
     - uses: reviewdog/action-eslint@v1
-        with:
-          github_token: ${{ secrets.GITHUBTOKEN }}
-          reporter: github-pr-review # Change reporter.
-          eslint_flags: 'src/'
+      with:
+        github_token: ${{ secrets.GITHUBTOKEN }}
+        reporter: github-pr-review # Change reporter.
+        eslint_flags: 'src/'
     - name: Run ESLint
       run: npm run lint
 
